@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ferris Wheel Force Simulator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Ferris Wheel Force Simulator</h1>
+      <p class="subtitle">Open Source Physics style • Weight + Normal Force + Net Force</p>
+    </header>
+
+    <div class="main">
+      <!-- Canvas -->
+      <div class="canvas-wrapper">
+        <canvas id="canvas" width="700" height="560"></canvas>
+      </div>
+
+      <!-- Controls -->
+      <div class="controls">
+        <div class="control-group">
+          <label>Radius (m)</label>
+          <input type="range" id="radius" min="20" max="100" value="50" step="1" />
+          <span id="radiusValue">50 m</span>
+        </div>
+
+        <div class="control-group">
+          <label>Speed (m/s)</label>
+          <input type="range" id="speed" min="-20" max="20" value="5" step="0.5" />
+          <span id="speedValue">5.0 m/s</span>
+        </div>
+
+        <div class="control-group">
+          <label>Mass (kg)</label>
+          <input type="range" id="mass" min="40" max="120" value="70" step="5" />
+          <span id="massValue">70 kg</span>
+        </div>
+
+        <div class="buttons">
+          <button id="playBtn">Play</button>
+          <button id="pauseBtn">Pause</button>
+          <button id="resetBtn">Reset</button>
+        </div>
+
+        <div class="checkboxes">
+          <label><input type="checkbox" id="showFBD" checked /> Show Free Body Diagram</label>
+          <label><input type="checkbox" id="showNet" checked /> Show Net Force</label>
+          <label><input type="checkbox" id="showVelocity" /> Show Velocity</label>
+        </div>
+
+        <div class="info">
+          <p><strong>Angle θ:</strong> <span id="angleValue">0.0°</span></p>
+          <p><strong>Normal Force:</strong> <span id="normalValue">—</span> N</p>
+          <p><strong>Weight:</strong> <span id="weightValue">—</span> N</p>
+          <p><strong>Net Force:</strong> <span id="netValue">—</span> N</p>
+          <p><strong>Apparent Weight:</strong> <span id="apparentValue">—</span> g</p>
+        </div>
+
+        <div class="legend">
+          <div><span class="dot weight"></span> Weight (mg)</div>
+          <div><span class="dot normal"></span> Normal Force (N)</div>
+          <div><span class="dot net"></span> Net Force (centripetal)</div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Based on the Open Source Physics Ferris Wheel JS Model (Mario Belloni + lookang)</p>
+      <p>Modern portable version • Place anywhere</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
